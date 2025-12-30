@@ -3,7 +3,17 @@
   "version": "1.0.0",
   "description": "This is a automated test suite for demo store",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "chrome-headless": "npx playwright test --project=chromium-headless",
+    "chrome": "npx playwright test --project=chromium",
+    "test-report": "npx playwright show-report",
+    "register-test": "npx playwright test demoShop/tests/register.spec.ts --project=chromium-headless",
+    "filter-test": "npx playwright test demoShop/tests/filterout.spec.ts --project=chromium-headless",
+    "login-test": "npx playwright test demoShop/tests/login.spec.ts --project=chromium-headless",
+    "cart-test": "npx playwright test demoShop/tests/cart.spec.ts --project=chromium-headless",
+    "all-tests": "npx playwright test --project=chromium-headless",
+    "run-after-register": "npx playwright test demoShop/tests/login.spec.ts demoShop/tests/browse.spec.ts demoShop/tests/filterout.spec.ts demoshop/tests/search.spec.ts demoShop/tests/cart.spec.ts --project=chromium-headless"  
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kosamkpl/demoStore.git"
