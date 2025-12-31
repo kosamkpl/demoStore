@@ -1,6 +1,6 @@
-import{expect, type Locator, type Page} from '@playwright/test';
+import { expect, type Locator, type Page } from '@playwright/test';
 
-export class RegisterPage { 
+export class RegisterPage {
     readonly page: Page;
     readonly mrRadio: Locator;
     readonly mrsRadio: Locator;
@@ -56,7 +56,7 @@ export class RegisterPage {
     };
     async navigateToLogin() {
         await this.loginLink.click();
-        await this.page.locator('iframe[name="framelive"]').contentFrame().getByRole('button', {name: 'Sign in'}).waitFor();
-    }   
+        await this.page.locator('iframe[name="framelive"]').contentFrame().getByRole('button', { name: 'Sign in' }).waitFor();
+    }
 }
 
