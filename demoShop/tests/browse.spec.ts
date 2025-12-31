@@ -1,14 +1,14 @@
-import {test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { mainPage } from '../objects/pages/main/main-page';
 
-test.beforeEach(async({page})=>{
+test.beforeEach(async ({ page }) => {
     await page.goto('https://demo.prestashop.com/#/en/front')
     await expect(page).toHaveTitle(/PrestaShop/);
     mainpage = new mainPage(page);
 });
 let mainpage: mainPage;
 
-test('navigate throug top menu bar', async({page})=>{
+test('navigate throug top menu bar', async ({ page }) => {
     const frame = page.frameLocator('xpath=//iframe[@id="framelive"]');
     await frame.getByRole('link', { name: 'Clothes' }).hover();
     await frame.getByRole('link', { name: 'Men', exact: true }).waitFor();
@@ -18,10 +18,10 @@ test('navigate throug top menu bar', async({page})=>{
     await frame.getByText('Hummingbird printed t-shirt').waitFor();
     await frame.getByText('Hummingbird printed t-shirt').click();
     await frame.getByText('Home  Clothes  Men  Hummingbird printed t-shirt').waitFor();
-    expect (frame.getByText('Home  Clothes  Men  Hummingbird printed t-shirt')).toBeVisible();
+    expect(frame.getByText('Home  Clothes  Men  Hummingbird printed t-shirt')).toBeVisible();
 });
 
-test('navigate to New Products and sort by', async({page})=>{
+test('navigate to New Products and sort by', async ({ page }) => {
     const frame = page.frameLocator('xpath=//iframe[@id="framelive"]');
     await frame.getByRole('link', { name: 'All new products' }).click();
     await frame.getByText('Home New products').waitFor();
@@ -33,5 +33,5 @@ test('navigate to New Products and sort by', async({page})=>{
     await frame.getByText('Hummingbird printed t-shirt').waitFor();
     await frame.getByText('Hummingbird printed t-shirt').click();
     await frame.getByText('Home  Clothes  Men  Hummingbird printed t-shirt').waitFor();
-    expect (frame.getByText('Home  Clothes  Men  Hummingbird printed t-shirt')).toBeVisible();
+    expect(frame.getByText('Home  Clothes  Men  Hummingbird printed t-shirt')).toBeVisible();
 });

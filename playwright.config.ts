@@ -47,13 +47,40 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'setup',
+      testMatch: /.*\.setup\.ts/,
+      use: {}
+
+    },
+    {
       name: 'chromium',
       testDir: 'demoShop',
-
       use: { 
         ...devices['Desktop Chrome'],
         headless: false,
-        trace: 'on'
+        trace: 'on',
+      },
+    },
+    {
+      name: 'chromium_with_setup',
+      testDir: 'demoShop',
+      dependencies: ['setup'],
+      use: { 
+        ...devices['Desktop Chrome'],
+        headless: false,
+        trace: 'on',
+        storageState: '.auth.json',
+      },
+    },
+    {
+      name: 'chromium_with_setup-headless',
+      testDir: 'demoShop',
+      dependencies: ['setup'],
+      use: { 
+        ...devices['Desktop Chrome'],
+        headless: true,
+        trace: 'on',
+        storageState: '.auth.json',
       },
     },
     {
@@ -62,7 +89,8 @@ export default defineConfig({
       use: { 
         ...devices['Desktop Chrome'],
         headless: true,
-        trace: 'on'
+        trace: 'on',
+        storageState: '.auth.json',
       },
     }
   ],

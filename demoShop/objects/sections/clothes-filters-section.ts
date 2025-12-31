@@ -45,23 +45,3 @@ export class FiltersSection {
         await this.page.locator('iframe[name="framelive"]').contentFrame().getByRole('button', { name: ' Clear all' }).click();
     }
 };
-
-// await page.locator('iframe[name="framelive"]').contentFrame().locator('ol').getByText('Accessories').click();
-// await page.locator('iframe[name="framelive"]').contentFrame().locator('#left-column').getByRole('link', { name: 'Home', exact: true }).click();
-// await page.locator('iframe[name="framelive"]').contentFrame().locator('#left-column').getByRole('link', { name: 'Clothes', exact: true }).click();
-// await page.locator('iframe[name="framelive"]').contentFrame().getByText('Accessories', { exact: true }).click();
-// await page.locator('iframe[name="framelive"]').contentFrame().locator('#left-column').getByRole('link', { name: 'Art' }).click();
-// await page.locator('iframe[name="framelive"]').contentFrame().getByRole('link', { name: 'Graphic Corner', exact: true }).click();
-// await page.locator('iframe[name="framelive"]').contentFrame().getByRole('link', { name: 'Studio Design' }).click();
-// await page.locator('iframe[name="framelive"]').contentFrame().locator('span').filter({ hasText: '' }).first().click();
-// await page.locator('iframe[name="framelive"]').contentFrame().getByRole('button', { name: ' Clear all' }).click();
-// await page.locator('iframe[name="framelive"]').contentFrame().locator('span').filter({ hasText: '' }).nth(2).click();
-// await page.locator('iframe[name="framelive"]').contentFrame().getByRole('button', { name: ' Clear all' }).click();
-// await page.locator('iframe[name="framelive"]').contentFrame().getByRole('listitem').filter({ hasText: '€10.00 - €' }).click();
-// await page.locator('iframe[name="framelive"]').contentFrame().locator('.ui-slider-range').click();
-// await page.locator('iframe[name="framelive"]').contentFrame().locator('span').filter({ hasText: '' }).nth(4).click();
-// await page.locator('iframe[name="framelive"]').contentFrame().getByRole('button', { name: ' Clear all' }).click();
-// await page.locator('iframe[name="framelive"]').contentFrame().getByRole('checkbox', { name: '40x60cm (3)' }).check();
-// await page.locator('iframe[name="framelive"]').contentFrame().locator('li:nth-child(2) > .facet-label > .custom-checkbox').click();
-// await page.locator('iframe[name="framelive"]').contentFrame().locator('li:nth-child(3) > .facet-label > .custom-checkbox').click();
-// await page.locator('iframe[name="framelive"]').contentFrame().getByRole('button', { name: ' Clear all' }).click();

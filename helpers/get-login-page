@@ -1,8 +1,0 @@
-import { Page } from '@playwright/test';
-
-export const getLoginPage = async {page:Page}:Promise<void> =>{
-
-}
-
-https://lean-edge.demo.prestashop.com/login?back=https%3A%2F%2Flean-edge.demo.prestashop.com%2F
-https://murky-school.demo.prestashop.com/login?back=https%3A%2F%2Fmurky-school.demo.prestashop.com%2Flogin%3Fback%3Dhttps%253A%252F%252Fmurky-school.demo.prestashop.com%252F
